@@ -13,10 +13,16 @@ const root = (state = initialState, action) => {
       return { ...state, pictures: { isLoading: true, data: [] } };
 
     case "ON_PICTURES_SUCCESS":
+      const mapData = action.payload.data.map((img) => ({
+        id: img.id,
+        url: img.urls.thumb,
+        description: img.description,
+      }));
+
       return {
         ...state,
         pictures: {
-          data: action.payload.data,
+          data: mapData,
           isLoading: false,
         },
       };

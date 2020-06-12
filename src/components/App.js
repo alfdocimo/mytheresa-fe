@@ -1,20 +1,14 @@
 import React from "react";
 import { hot } from "react-hot-loader";
-import { useDispatch, useSelector } from "react-redux";
-import { loadPictures } from "../actions";
+import routes from "../routes";
+import { Switch, Route } from "react-router-dom";
+
+const renderRoutes = (routes) => {
+  return routes.map((route) => <Route exact {...route} />);
+};
 
 const App = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.root.pictures.isLoading);
-
-  return (
-    <div>
-      {isLoading && <div>nepe</div>}
-      <button onClick={() => dispatch(loadPictures())}>
-        Increment counter
-      </button>
-    </div>
-  );
+  return <Switch>{renderRoutes(routes)}</Switch>;
 };
 
 export default hot(module)(App);
