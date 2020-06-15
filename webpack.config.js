@@ -30,7 +30,7 @@ module.exports = (env) => {
       path: path.resolve(__dirname, "dist"),
       filename: "[name].bundle.js",
       chunkFilename: "[name].bundle.js",
-      publicPath: "/",
+      publicPath: "/dist/",
       filename: "bundle.js",
     },
     devServer: {
