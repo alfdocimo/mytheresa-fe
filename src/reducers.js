@@ -1,18 +1,38 @@
+import { Types } from "./actions";
 import { combineReducers } from "redux";
 
 const initialState = {
   pictures: {
     isLoading: false,
+    hasError: false,
     data: [],
+  },
+  picture: {
+    isLoading: false,
+    hasError: false,
+    data: {},
   },
 };
 
-const root = (state = initialState, action) => {
+const picturesReducer = (state = initialState.pictures, action) => {
   switch (action.type) {
-    case "ON_PICTURES_REQUEST":
-      return { ...state, pictures: { isLoading: true, data: [] } };
+    case Types.ON_PICTURES_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        data: [],
+        hasError: false,
+      };
 
-    case "ON_PICTURES_SUCCESS":
+    case Types.ON_PICTURES_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        data: [],
+        hasError: true,
+      };
+
+    case Types.ON_PICTURES_SUCCESS:
       const mapData = action.payload.data.map((img) => ({
         id: img.id,
         url: img.urls.thumb,
@@ -21,10 +41,41 @@ const root = (state = initialState, action) => {
 
       return {
         ...state,
-        pictures: {
-          data: mapData,
-          isLoading: false,
-        },
+        data: mapData,
+        isLoading: false,
+        hasError: false,
+      };
+
+    default:
+      return state;
+  }
+};
+
+const pictureReducer = (state = initialState.picture, action) => {
+  switch (action.type) {
+    case Types.ON_PICTURE_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        data: {},
+        hasError: false,
+      };
+
+    case Types.ON_PICTURE_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        data: {},
+        hasError: true,
+      };
+
+    case Types.ON_PICTURE_SUCCESS:
+      return {
+        ...state,
+
+        data: action.payload.data,
+        isLoading: false,
+        hasError: false,
       };
 
     default:
@@ -33,7 +84,8 @@ const root = (state = initialState, action) => {
 };
 
 const rootReducer = combineReducers({
-  root,
+  pictures: picturesReducer,
+  picture: pictureReducer,
 });
 
 export default rootReducer;

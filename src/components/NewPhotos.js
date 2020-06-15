@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import Card from "../components/Card";
+import Card from "./Card/Card";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { loadPictures } from "../actions";
@@ -12,13 +13,18 @@ const StyledContainer = styled.div`
 
 const renderPictures = (pictures) => {
   return pictures.map((picture) => (
-    <Card imgUrl={picture.url} description={picture.description} />
+    <Link to={`/new-photos/${picture.id}`} key={picture.id}>
+      <Card
+        imgUrl={picture.url}
+        description={picture.description || undefined}
+      />
+    </Link>
   ));
 };
 
 export default function NewPhotos() {
   const dispatch = useDispatch();
-  const pictures = useSelector((state) => state.root.pictures.data);
+  const pictures = useSelector((state) => state.pictures.data);
 
   useEffect(() => {
     if (!pictures.length) dispatch(loadPictures());

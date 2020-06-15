@@ -1,5 +1,6 @@
 import Home from "../components/Home";
 import NewPhotos from "../components/NewPhotos";
+import PhotoDetail from "../components/PhotoDetail";
 
 export default [
   {
@@ -11,5 +12,10 @@ export default [
     path: "/new-photos",
     component: NewPhotos,
     key: "NewPhotosView",
+  },
+  {
+    path: "/new-photos/:id",
+    component: PhotoDetail,
+    key: "PhotoDetailView",
   },
 ];
