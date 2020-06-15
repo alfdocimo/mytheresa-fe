@@ -17,4 +17,10 @@ export default [
     name: "PhotoDetail",
     key: "PhotoDetailView",
   },
+  {
+    path: "/search-photos",
+    component: "./SearchPhotos",
+    name: "SearchPhotos",
+    key: "SearchPhotosView",
+  },
 ];

@@ -27,7 +27,7 @@ export default function NewPhotos() {
   const pictures = useSelector((state) => state.pictures.data);
 
   useEffect(() => {
-    if (!pictures.length) dispatch(loadPictures());
+    if (!pictures.length) dispatch(loadPictures({ page: 1 }));
   }, []);
 
   return <StyledContainer>{renderPictures(pictures)}</StyledContainer>;

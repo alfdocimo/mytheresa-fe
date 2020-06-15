@@ -7,7 +7,10 @@ const StyledLoader = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
+  font-size: 4em;
   top: 0;
+  right: 0;
+  z-index: 999;
 `;
 
 export default StyledLoader;

@@ -5120,6 +5120,11 @@ url@^0.11.0:
     punycode "1.3.2"
     querystring "0.2.0"
 
+use-debounce@^3.4.2:
+  version "3.4.2"
+  resolved "https://agency-commerce.pkgs.visualstudio.com/_packaging/Default/npm/registry/use-debounce/-/use-debounce-3.4.2.tgz#f4333cca59504244b916159600427bf977ec4c46"
+  integrity sha1-9DM8yllQQkS5FhWWAEJ7+XfsTEY=
+
 use@^3.1.0:
   version "3.1.1"
   resolved "https://agency-commerce.pkgs.visualstudio.com/_packaging/Default/npm/registry/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
