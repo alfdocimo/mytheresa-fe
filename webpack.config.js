@@ -38,6 +38,9 @@ module.exports = (env) => {
       hotOnly: true,
       historyApiFallback: true,
     },
+    node: {
+      fs: "empty",
+    },
 
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
