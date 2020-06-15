@@ -52,6 +52,5 @@ describe("[SearchPhotos]", () => {
     await waitFor(() => {
       expect(getByText("bean the cat")).toBeInTheDocument();
     });
-    debug();
   });
 });
