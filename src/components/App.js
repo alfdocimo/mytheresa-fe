@@ -2,6 +2,7 @@ import React, { lazy } from "react";
 import { hot } from "react-hot-loader";
 import routes from "../routes";
 import { Switch, Route } from "react-router-dom";
+import BackButton from "./BackButton";
 
 const renderRoutes = (routes) =>
   routes.map((route) => {
@@ -11,7 +12,12 @@ const renderRoutes = (routes) =>
   });
 
 const App = () => {
-  return <Switch>{renderRoutes(routes)}</Switch>;
+  return (
+    <>
+      <Switch>{renderRoutes(routes)}</Switch>
+      <BackButton />
+    </>
+  );
 };
 
 export default hot(module)(App);

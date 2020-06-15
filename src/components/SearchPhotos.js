@@ -4,6 +4,7 @@ import { queryPictures } from "../actions";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "./Card";
+import Input from "./Input";
 import styled from "styled-components";
 
 export default function SearchPhotos() {
@@ -21,6 +22,16 @@ export default function SearchPhotos() {
     flex-wrap: wrap;
   `;
 
+  const StyledSearchContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto;
+    max-width: 500px;
+  `;
+
   const renderPictures = (pictures) => {
     return pictures.map((picture) => (
       <Link to={`/new-photos/${picture.id}`} key={picture.id}>
@@ -34,8 +45,10 @@ export default function SearchPhotos() {
 
   return (
     <div>
-      <input defaultValue={""} onChange={handleOnChangeFetch} />
-      <h1>Looking for pictures of {query.value}</h1>
+      <StyledSearchContainer>
+        <Input defaultValue={""} onChange={handleOnChangeFetch} />
+        <h1>Looking for pictures of {query.value}</h1>
+      </StyledSearchContainer>
       {query.data && (
         <StyledContainer>{renderPictures(query.data)}</StyledContainer>
       )}
