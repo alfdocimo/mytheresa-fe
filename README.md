@@ -1,8 +1,6 @@
-# Basic react starter 2020 ⚛️
+# Mytheresa Front End Challenge
 
-The title says it all. One quick react starter using `babel` & `webpack`.
-
-Think of this as the yeast of your project and get cooking 🍞🥖
+## Getting started
 
 Installing dependencies:
 
@@ -20,6 +18,14 @@ or
 
 `npm run dev`
 
+To test:
+
+`yarn test`
+
+or
+
+`npm run test`
+
 Building to prod:
 
 `yarn build`
@@ -29,3 +35,14 @@ or
 `npm run build`
 
 Have fun!
+
+## About the project
+
+I decided to create an application based on Unsplash's API.
+
+From the main entry to the app you have two options:
+
+- Look at new images
+- Query images
+
+Both of these options will then show a list of results and you will be able to open the image on a higher resolution.
