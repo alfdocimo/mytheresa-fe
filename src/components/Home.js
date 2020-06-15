@@ -3,19 +3,18 @@ import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import styled from "styled-components";
 
-const Home = () => {
-  const StyledHome = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+const StyledHome = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    > * {
-      &:not(:first-child) {
-        padding-top: 20px;
-      }
+  > * {
+    &:not(:first-child) {
+      padding-top: 20px;
     }
-  `;
-
+  }
+`;
+const Home = () => {
   return (
     <StyledHome>
       <h1>👚 Mytheresa FE Challenge 👒</h1>

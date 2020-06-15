@@ -7,6 +7,21 @@ import Card from "./Card";
 import Input from "./Input";
 import styled from "styled-components";
 
+const StyledContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const StyledSearchContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 500px;
+`;
+
 export default function SearchPhotos() {
   const dispatch = useDispatch();
   const query = useSelector((state) => state.query);
@@ -16,21 +31,6 @@ export default function SearchPhotos() {
   }, 1000);
 
   const handleOnChangeFetch = (e) => debouncedHandler(e.target.value);
-
-  const StyledContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-  `;
-
-  const StyledSearchContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    margin: 0 auto;
-    max-width: 500px;
-  `;
 
   const renderPictures = (pictures) => {
     return pictures.map((picture) => (
@@ -46,7 +46,11 @@ export default function SearchPhotos() {
   return (
     <div>
       <StyledSearchContainer>
-        <Input defaultValue={""} onChange={handleOnChangeFetch} />
+        <Input
+          defaultValue={""}
+          onChange={handleOnChangeFetch}
+          data-testid="query-pictures-input"
+        />
         <h1>Looking for pictures of {query.value}</h1>
       </StyledSearchContainer>
       {query.data && (
