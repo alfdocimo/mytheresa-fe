@@ -24,7 +24,7 @@ describe("[NewPhotos]", () => {
 
   afterAll(() => server.close());
 
-  test("Users is able to navigate to [/new-photos] and views pictures correctly", async () => {
+  test("User is able to navigate to [/new-photos] and views pictures correctly", async () => {
     const { getByText } = renderWithRouter("/");
 
     await waitFor(() => {

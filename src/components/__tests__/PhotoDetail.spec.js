@@ -23,7 +23,7 @@ describe("[PhotoDetail]", () => {
 
   afterAll(() => server.close());
 
-  test("Users is able to navigate to [/new-photos/:id] and views the selected picture correctly", async () => {
+  test("User is able to navigate to [/new-photos/:id] and views the selected picture correctly", async () => {
     const { getByText } = renderWithRouter("/new-photos/fogVWRn65zI");
 
     await waitFor(() => {

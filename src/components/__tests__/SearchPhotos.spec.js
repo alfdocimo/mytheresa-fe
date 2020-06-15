@@ -24,7 +24,7 @@ describe("[SearchPhotos]", () => {
 
   afterAll(() => server.close());
 
-  test("Users is able to navigate to [/search-photos]", async () => {
+  test("User is able to navigate to [/search-photos]", async () => {
     const { getByText } = renderWithRouter("/search-photos");
 
     await waitFor(() => {
@@ -32,7 +32,7 @@ describe("[SearchPhotos]", () => {
     });
   });
 
-  test("Users is able to search for pictures on [/search-photos]", async () => {
+  test("User is able to search for pictures on [/search-photos]", async () => {
     const { getByTestId, getByText, debug } = renderWithRouter(
       "/search-photos"
     );
