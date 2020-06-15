@@ -5,6 +5,9 @@
   "main": "index.js",
   "repository": "https://github.com/alfdocimo/minimal-react-starter.git",
   "author": "Alfredo Narvaez",
+  "engines": {
+    "node": ">=0.12"
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.10.1",
