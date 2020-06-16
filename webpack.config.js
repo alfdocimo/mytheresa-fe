@@ -9,10 +9,16 @@ module.exports = (env) => {
   });
 
   const envKeys = Object.keys(parsed).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(parsed[next]);
+    console.log("ENV", process.env);
+    const value = !!parsed[next]
+      ? JSON.stringify(parsed[next])
+      : process.env[next];
+
+    prev[`process.env.${next}`] = value;
     return prev;
   }, {});
 
+  console.log("envKeys", envKeys);
   return {
     entry: "./src/index.js",
     mode: "development",
