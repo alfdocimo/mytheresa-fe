@@ -4,12 +4,12 @@ const dotenv = require("dotenv");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (env) => {
+  console.log("env:", env);
   const { parsed } = dotenv.config({
     path: path.resolve(__dirname, `.env.${env}`),
   });
 
   const envKeys = Object.keys(parsed).reduce((prev, next) => {
-    console.log("ENV", process.env);
     const value = !!parsed[next]
       ? JSON.stringify(parsed[next])
       : process.env[next];
@@ -18,7 +18,8 @@ module.exports = (env) => {
     return prev;
   }, {});
 
-  console.log("envKeys", envKeys);
+  console.log("envKeys:", envKeys);
+
   return {
     entry: "./src/index.js",
     mode: "development",

@@ -3,6 +3,15 @@ import { hot } from "react-hot-loader";
 import routes from "../routes";
 import { Switch, Route } from "react-router-dom";
 import BackButton from "./BackButton";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 20px;
+`;
 
 const renderRoutes = (routes) =>
   routes.map((route) => {
@@ -15,7 +24,9 @@ const App = () => {
   return (
     <>
       <Switch>{renderRoutes(routes)}</Switch>
-      <BackButton />
+      <StyledContainer>
+        <BackButton />
+      </StyledContainer>
     </>
   );
 };

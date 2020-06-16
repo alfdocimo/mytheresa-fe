@@ -1,12 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
-
-const StyledBackButton = styled.button`
-  border: none;
-  background: none;
-  cursor: pointer;
-`;
+import Button from "../Button";
 
 export default function BackButton() {
   const history = useHistory();
@@ -16,6 +10,11 @@ export default function BackButton() {
   };
 
   return (
-    <StyledBackButton onClick={handleGoBack}>👈 Go back!</StyledBackButton>
+    <Button
+      onClick={handleGoBack}
+      bg="#333333"
+      color="#ffffff"
+      text="👈 Go back!"
+    />
   );
 }

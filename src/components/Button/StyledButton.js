@@ -10,8 +10,8 @@ const StyledButton = styled.button`
 
   border-radius: 5px;
 
-  background: #b993d6;
-  color: #fff;
+  background: ${(props) => `${props.bg}`};
+  color: ${(props) => `${props.color}`};
   padding: 10px;
   font-size: 1em;
   font-weight: bold;
