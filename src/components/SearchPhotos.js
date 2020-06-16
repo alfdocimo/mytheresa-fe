@@ -20,6 +20,7 @@ const StyledSearchContainer = styled.div`
   justify-items: center;
   margin: 0 auto;
   max-width: 500px;
+  padding-top: 50px;
 `;
 
 export default function SearchPhotos() {

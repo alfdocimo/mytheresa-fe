@@ -10,7 +10,7 @@ const StyledContainer = styled.div`
   align-content: center;
   align-items: center;
   display: flex;
-  padding-top: 20px;
+  padding: 20px 0px;
 `;
 
 const renderRoutes = (routes) =>

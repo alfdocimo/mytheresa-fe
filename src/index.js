@@ -15,6 +15,8 @@ const GlobalStyle = createGlobalStyle`
       #fff
     );
 
+    background-repeat: no-repeat;
+
     display: flex;
     justify-content: center;
     align-content: center;
