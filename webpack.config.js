@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const dotenv = require("dotenv");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = (env) => {
   const { parsed } = dotenv.config({
@@ -27,16 +28,16 @@ module.exports = (env) => {
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
     output: {
-      path: path.resolve(__dirname, "dist"),
+      path: path.resolve(__dirname, "./dist"),
       filename: "[name].bundle.js",
       chunkFilename: "[name].bundle.js",
-      publicPath: "/dist/",
+      publicPath: "/",
       filename: "bundle.js",
     },
     devServer: {
-      contentBase: path.join(__dirname, "public/"),
+      contentBase: path.join(__dirname, "./dist"),
       port: 3000,
-      publicPath: "http://localhost:3000/dist/",
+      publicPath: "http://localhost:3000/",
       hotOnly: true,
       historyApiFallback: true,
     },
@@ -47,6 +48,9 @@ module.exports = (env) => {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.DefinePlugin(envKeys),
+      new HtmlWebpackPlugin({
+        template: path.resolve("./public/index.html"),
+      }),
     ],
   };
 };

@@ -21,6 +21,7 @@
     "@testing-library/user-event": "^11.4.2",
     "babel-loader": "^8.1.0",
     "dotenv": "^8.2.0",
+    "html-webpack-plugin": "^4.3.0",
     "jest": "^26.0.1",
     "msw": "^0.19.3",
     "webpack": "^4.43.0",
