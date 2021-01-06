@@ -35,14 +35,13 @@ module.exports = (env) => {
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
     output: {
-      path: path.resolve(__dirname, "./dist"),
+      path: path.resolve(__dirname, "dist"),
       filename: "[name].bundle.js",
       chunkFilename: "[name].bundle.js",
-      publicPath: "/",
-      filename: "bundle.js",
+      publicPath: "./",
     },
     devServer: {
-      contentBase: path.join(__dirname, "./dist"),
+      contentBase: path.join(__dirname, "dist"),
       port: 3000,
       publicPath: "http://localhost:3000/",
       hotOnly: true,
